@@ -19,6 +19,7 @@
                     <items>
                       <item>PulseAudio</item>
                       <item>ALSA</item>
+                      <item>PipeWire</item>
                     </items>
                   </object>
                 </property>

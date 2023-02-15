@@ -57,6 +57,7 @@ pub trait SpotifyPlayerDelegate {
 pub enum AudioBackend {
     PulseAudio,
     Alsa(String),
+    PipeWire,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -247,6 +248,11 @@ impl SpotifyPlayer {
                 info!("using alsa ({})", &device);
                 let backend = audio_backend::find(Some("alsa".to_string())).unwrap();
                 backend(Some(device), AudioFormat::default())
+            }
+            AudioBackend::PipeWire => {
+                info!("using pipewire");
+                let backend = audio_backend::find(Some("pipe".to_string())).unwrap();
+                backend(None, AudioFormat::default())
             }
         })
     }

@@ -3,6 +3,7 @@
   <enum id="dev.alextren.Spot.AudioBackend">
     <value value="0" nick="pulseaudio"/>
     <value value="1" nick="alsa"/>
+    <value value="2" nick="pipewire"/>
   </enum>
   <enum id="dev.alextren.Spot.Bitrate">
     <value value="0" nick="96"/>
